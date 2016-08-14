@@ -23,20 +23,24 @@
                    fieldLabel: 'Model',
                    emptyText: 'Select a model...',
                    selectOnFocus: false,
+                   hideTrigger: true,
+                    typeAhead: true,
+                    typeAheadDelay: 100,
+                    editable:true,
+                  minChars: 2,
                    anchor: '100%',
-                   tpl: Ext.create('Ext.XTemplate',
+                   hideTrigger: true,
+    		   typeAhead: true,
+    		   typeAheadDelay: 100,
+    		   minChars: 2,
+		   tpl: Ext.create('Ext.XTemplate',
                         '<tpl for=".">',
                             '<div class="x-boundlist-item" style="border-bottom:1px solid #f0f0f0;">',
                             '<div>{name}</div>',
                             '<div><b>Category:</b> {category}</div>',
                             '<div><b>Vendor:</b> {vendor}</div></div>',
                         '</tpl>'
-                    ),
-                   displayTpl: Ext.create('Ext.XTemplate',
-                        '<tpl for=".">',
-                            '{name} ({vendor})',
-                        '</tpl>'
-                   )
+                    )
                }
            ]
        }
