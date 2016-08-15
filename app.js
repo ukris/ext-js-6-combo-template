@@ -1,7 +1,7 @@
 ﻿Ext.application({
     name: 'App',
-    models: ['Automobile'],
-    stores: ['Automobiles'],
+    models: ['Report'],
+    stores: ['Reports'],
     views: ['Viewport'],
     autoCreateViewport: true,
     
