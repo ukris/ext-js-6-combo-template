@@ -30,15 +30,25 @@
             hideTrigger: true,
             typeAhead: true,
             typeAheadDelay: 100,
-            minChars: 2,
             tpl: Ext.create('Ext.XTemplate',
-                '<h3><b>Reports</b></h3>',
+                '{[this.currentKey = null]}',
                 '<tpl for=".">',
-                '<div class="x-boundlist-item">',
-                    '<span>{title}</span>',
-                '</div>',
-                '</tpl>'
+                    '<tpl if="this.shouldShowHeader(type)">',
+                        '<h3 class="group-header">{[this.showHeader(values.type)]}</h3>',
+                    '</tpl>',
+                    '<div class="x-boundlist-item">{title}</div>',
+                '</tpl>',
+                {
+                    shouldShowHeader: function(type){
+                        return this.currentKey != type;
+                    },
+                    showHeader: function(type){
+                        this.currentKey = type;
+                        return type;
+                    }
+                }
             )
+
         }]
     }]
 });

@@ -3,10 +3,9 @@
     model: 'App.model.Report',
     proxy: {
         type: 'ajax',
-        url: 'data.json',
+        url: 'ndata.json',
         reader: {
-            type: 'json',
-            rootProperty: 'reports'
+            type: 'json'
         }
     }
 });
