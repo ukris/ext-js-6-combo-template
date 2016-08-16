@@ -1,35 +1,35 @@
 ﻿Ext.define('App.view.Viewport', {
-    extend: 'Ext.container.Viewport',
-    requires: ['Ext.form.FormPanel', 'Ext.form.field.ComboBox'],
-    style: 'padding:25px',
-    layout: 'vbox',
+    extend: 'Ext.form.Panel',
+    xtype: 'custom-template-combo',
+    title: 'Custom Template  ComboBox',
+    layout: 'form',
+    viewModel: {},
     items: [{
-        xtype: 'form',
-        title: 'Reports',
-        width: 500,
-        bodyPadding: 10,
+        xtype: 'fieldset',
+        layout: 'anchor',
         items: [{
-            xtype: 'combo',
-            id: 'autos-combo',
-            store: 'Reports',
-            displayField: 'name',
-            valueField: 'id',
-            editable: false,
-            queryMode: 'remote',
-            multiSelect: false,
-            triggerAction: 'all',
-            fieldLabel: 'Reports',
-            emptyText: 'Select a model...',
-            selectOnFocus: false,
-            hideTrigger: true,
-            typeAhead: true,
-            typeAheadDelay: 100,
-            editable: true,
-            minChars: 2,
+            xtype: 'component',
             anchor: '100%',
+            html: [
+                '<h3>Custom ComboBox</h3>',
+            ]
+        }, {
+            fieldLabel: 'Select a type',
+            xtype: 'combobox',
+            anchor: '-20',
+            displayField: 'title',
             hideTrigger: true,
-            typeAhead: true,
-            typeAheadDelay: 100,
+            
+            reference: 'connector',
+            publishes: 'value',
+            
+            queryMode: 'local',
+            
+            store: {
+                type: 'Reports',
+                autoLoad: true
+            },
+    
             tpl: Ext.create('Ext.XTemplate',
                 '{[this.currentKey = null]}',
                 '<tpl for=".">',
@@ -47,8 +47,23 @@
                         return type;
                     }
                 }
-            )
-
+            ),
+            listeners: {
+                change: function(combobox, newValue, oldValue, eOptions) {
+                    Ext.Ajax.request({
+                        url: 'results.json',
+                        method: 'GET',
+                        success: function(conn, response, options, eOpts) {
+                            console.log('response', conn, response, options)
+                        },
+                        failure: function(conn, response, options, eOpts) {
+                            // TODO get the 'msg' from the json and display it
+                            Packt.util.Util.showErrorMsg(conn.responseText);
+                        }
+                    });
+                }
+            }
+            
         }]
     }]
 });

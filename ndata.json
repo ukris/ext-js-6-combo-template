@@ -6,23 +6,38 @@
 			"source": "report",
 			"icon": "table",
 			"type": "reports"
-		}, {
+		},
+		
+		{
 			"description": "Report Two",
 			"title": "Report 2",
 			"url": "#report/2",
 			"source": "report",
 			"icon": "table",
 			"type": "reports"
-		}, {
+		},
+		
+		{
 			"description": "Dashboard One",
 			"title": "dashboard 1",
 			"url": "#dashboard/1",
 			"source": "dashboard",
 			"icon": "table",
 			"type": "dashboards"
-		}, {
+		},
+		
+		{
 			"description": "Dashboard Two",
 			"title": "Dashboard 2",
+			"url": "#dashboard/2",
+			"source": "dashboard",
+			"icon": "table",
+			"type": "dashboards"
+		},
+		
+		{
+			"description": "Repre Two",
+			"title": "Reper 2",
 			"url": "#dashboard/2",
 			"source": "dashboard",
 			"icon": "table",

@@ -1,0 +1,19 @@
+{
+	"type":"reports",
+	 "results":[
+	 	{
+	 		"name":"Material Spend - Top Suppliers",
+	 		"value":"Spend Dollars"
+	 	},
+	 	,
+	 	{
+	 		"name":"Supplier Quality",
+	 		"value":"Quality rejected"
+	 	},
+	 	{
+	 		"name":"Supplier Delivery Performance",
+	 		"value":"Supplier on-line deliveries"
+	 	}
+
+	 ]
+}
