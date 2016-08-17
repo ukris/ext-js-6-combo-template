@@ -12,6 +12,18 @@
 	 	{
 	 		"name":"Supplier Delivery Performance",
 	 		"value":"Supplier on-line deliveries"
+	 	},
+		{
+	 		"name":"Supplier Delivery 1",
+	 		"value":"Supplier on-line deliveries 1"
+	 	},
+		{
+	 		"name":"Supplier Delivery 2",
+	 		"value":"Supplier on-line deliveries 2"
+	 	},
+		{
+	 		"name":"Supplier Delivery 3",
+	 		"value":"Supplier on-line deliveries 3"
 	 	}
 
 	]

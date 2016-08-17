@@ -7,7 +7,8 @@
         xtype : 'panel',
         width : '100%',
         padding: 20,
-        flex  : 1
+        flex  : 1,
+        cls: 'two-column'
     }]
 });
 
@@ -19,7 +20,6 @@ Ext.define('App.view.Viewport', {
     layout: {
         type: 'vbox',
         align: 'stretch',
-        animate: true, //{ duration: 2000, easing: 'easeIn' },
     },
     viewModel: {},
     items: [{
@@ -75,9 +75,17 @@ Ext.define('App.view.Viewport', {
                             keys: combobox.getValue()
                         },
                         callback: function(records, operation, success) {
-                            var firstItem = ResultStore.getAt(2);
-                            console.log('firstItem', firstItem);
-                            resultPanel.items.get(0).update('<h3>' + firstItem.data.name + '</h3><div>' + firstItem.data.value + '</div>');
+                            var newContent = [];
+                            ResultStore.each(function(item) {
+                                newContent.push(
+                                    '<div class="detail-result">' +
+                                        '<h3>' + item.data.name + '</h3>' +
+                                        '<div>' + item.data.value + '</div>' +
+                                    '</div>'
+                                );
+                            });
+                            
+                            resultPanel.items.get(0).update(newContent.join(''));
                         }
                     });
                     

@@ -1,0 +1,15 @@
+﻿
+
+.two-column {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 100vw;
+	font-size: 0; 
+}
+
+.two-column .detail-result {
+    width: 50%;
+    display: inline-table;
+
+}
