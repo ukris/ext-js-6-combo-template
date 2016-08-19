@@ -1,0 +1,23 @@
+{
+  "name": "ext-js-6-combo-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukris/ext-js-6-combo-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ukris/ext-js-6-combo-template/issues"
+  },
+  "homepage": "https://github.com/ukris/ext-js-6-combo-template#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}
