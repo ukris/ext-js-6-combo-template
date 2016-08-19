@@ -10,7 +10,7 @@ var express = require('express'),
 		port:8001
 	};
 
-app.use('/app',express.static(path.resolve(__dirname,'public/app')));
+app.use('/',express.static(path.resolve(__dirname,'public')));
 
 function response(res,filePath,filter) {
 	var file = fs.readFileSync('data/'+filePath+'.json','utf8'),
@@ -31,9 +31,11 @@ app.get('/',function(req,res) {
 app.get('/search',function(req,res) {
 	return(response(res,'ndata',req.query.keys));
 });
+
 app.get('/results',function(req,res) {
 	return(response(res,'results'));
 });
+
 http = require('http').createServer(app);
 
 http.listen(config.port,function() {

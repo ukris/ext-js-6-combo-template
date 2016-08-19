@@ -1,5 +1,5 @@
 ﻿var resultPanel = Ext.create('Ext.panel.Panel', {
-    title  : "Result Panel",
+    title  : "Results",
     layout : {
         type  : 'vbox'
     },
@@ -9,6 +9,39 @@
         padding: 20,
         flex  : 1,
         cls: 'two-column'
+    }]
+});
+
+var tabPanel = Ext.create('Ext.panel.Panel', {
+    layout : {
+        type  : 'vbox'
+    },
+    items : [{
+        xtype : 'tabpanel',
+        width : '100%',
+        frame: true,
+        defaults: {
+            bodyPadding: 10,
+            scrollable: true
+        },
+        
+        items: [{
+            title: 'All resutls',
+            html: 'All resutls'
+        }, {
+            title: 'Dashboards',
+            html: 'Dashboards'
+        },
+            resultPanel
+        ],
+    
+        listeners: {
+            tabchange: 'onTabChange'
+        },
+        
+        onTabChange: function(a, b, c) {
+            console.log('a b c', a, b, c);
+        }
     }]
 });
 
@@ -103,5 +136,5 @@ Ext.define('App.view.Viewport', {
             }
             
         }]
-    }, resultPanel]
+    }, tabPanel]
 });
