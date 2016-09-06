@@ -1,19 +1,4 @@
-﻿var suggestionPanel = Ext.create('Ext.panel.Panel', {
-    title  : "All Results",
-    layout : {
-        type  : 'vbox'
-    },
-    items : [{
-        xtype : 'panel',
-        width : '100%',
-        padding: 20,
-        flex  : 1,
-        cls: 'two-column',
-        html: 'all result'
-    }]
-});
-
-var resultPanel = Ext.create('Ext.panel.Panel', {
+﻿var resultPanel = Ext.create('Ext.panel.Panel', {
     title  : "Results",
     layout : {
         type  : 'vbox'
@@ -40,12 +25,13 @@ var tabPanel = Ext.create('Ext.panel.Panel', {
             scrollable: true
         },
         
-        items: [
-            suggestionPanel,
-            {
-                title: 'Dashboards',
-                html: 'Dashboards'
-            },
+        items: [{
+            title: 'All resutls',
+            html: 'All resutls'
+        }, {
+            title: 'Dashboards',
+            html: 'Dashboards'
+        },
             resultPanel
         ],
     
@@ -146,9 +132,6 @@ Ext.define('App.view.Viewport', {
                     
                     
                     
-                },
-                change: function(combobox , newValue , oldValue , eOpts) {
-                    console.log('combobox', combobox.value)
                 }
             }
             
